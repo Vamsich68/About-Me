@@ -1,0 +1,118 @@
+.skills-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 4rem;
+        text-align: center;
+        position: relative;
+        color: #2d2e32;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+        }
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .skill-category {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: #2d2e32;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 40px;
+                height: 2px;
+                background: linear-gradient(90deg, #00c6ff, #0072ff);
+            }
+        }
+    }
+
+    .skills-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .skill-item {
+        span {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+
+            .progress {
+                height: 100%;
+                background: linear-gradient(90deg, #00c6ff, #0072ff);
+                border-radius: 4px;
+                transition: width 1.5s ease-in-out;
+                position: relative;
+                width: 0;
+
+                &.animate {
+                    animation: fillProgress 1.5s ease-in-out forwards;
+                    
+                    @keyframes fillProgress {
+                        from { width: 0; }
+                        to { width: var(--progress-width); }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .skill-category {
+            padding: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,137 @@
+.education-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+    min-height: 80vh;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+        text-align: center;
+        position: relative;
+        color: #2d2e32;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+        }
+    }
+
+    .education-card {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        overflow: hidden;
+        max-width: 800px;
+        margin: 0 auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+    }
+
+    .education-header {
+        background: linear-gradient(90deg, #00c6ff, #0072ff);
+        padding: 2rem;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .degree {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .year {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    }
+
+    .education-body {
+        padding: 2rem;
+
+        h3 {
+            color: #2d2e32;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .score {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0,114,255,0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+
+            .label {
+                color: #0072ff;
+                font-weight: 600;
+                margin-right: 0.5rem;
+            }
+
+            .value {
+                color: #2d2e32;
+                font-weight: 600;
+            }
+        }
+
+        .highlights {
+            p {
+                color: #2d2e32;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+
+                li {
+                    color: #555;
+                    margin-bottom: 0.8rem;
+                    padding-left: 1.5rem;
+                    position: relative;
+                    line-height: 1.6;
+
+                    &:before {
+                        content: '•';
+                        color: #0072ff;
+                        position: absolute;
+                        left: 0;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .education-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+    }
+}
